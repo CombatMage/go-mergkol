@@ -7,12 +7,13 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
 const defaultFileExtensionFilter = "*"
-const defaultDir = ".s"
-const defaultOutputFile = "Merged"
+const defaultDir = "src"
+const defaultOutputFile = "Merged.kt"
 
 // sourceCodeFile represents a file of source code.
 // It contains name and package (both optional) and
@@ -202,9 +203,14 @@ func main() {
 		fmt.Println("go-mergkol.exe -dir <source code dir> -o <output file>")
 		return
 	}
-
 	fmt.Println("merging files in: " + input.inputDir)
 	fmt.Println("reading files with extension: " + input.extensionsFilter)
+	fmt.Println("skipping test files: " + strconv.FormatBool(input.skipTestFiles))
+
+	if !fileExist(input.inputDir) {
+		fmt.Println("input directory not found: " + input.inputDir)
+		return
+	}
 
 	mergedFile, err := mergeFilesInDir(input.inputDir, input.extensionsFilter, input.skipTestFiles)
 
