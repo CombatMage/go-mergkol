@@ -28,10 +28,11 @@ type sourceCodeFile struct {
 func (file sourceCodeFile) writeToFile(path string) error {
 	var mergedFile string
 	for _, line := range file.imports {
-		mergedFile += line
+		mergedFile += line + "\r\n"
 	}
+	mergedFile += "\r\n"
 	for _, line := range file.code {
-		mergedFile += line
+		mergedFile += line + "\r\n"
 	}
 	return ioutil.WriteFile(path, []byte(mergedFile), 777)
 }
