@@ -1,4 +1,4 @@
-module github.com/CombatMage/go-mergkol
+module github.com/EricNeid/go-mergkol
 
 require (
 	github.com/davecgh/go-spew v1.1.0
