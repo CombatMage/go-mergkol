@@ -1,3 +1,4 @@
 debug
-*.exe
+cmd/mergekotlin/mergekotlin.exe
+cmd/mergekotlin/mergekotlin
 debug.test

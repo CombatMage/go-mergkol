@@ -15,6 +15,13 @@ const defaultFileExtensionFilter = "*"
 const defaultDir = "src"
 const defaultOutputFile = "Merged.kt"
 
+func fileExist(file string) bool {
+	if _, err := os.Stat(file); !os.IsNotExist(err) {
+		return true
+	}
+	return false
+}
+
 // sourceCodeFile represents a file of source code.
 // It contains name and package (both optional) and
 // a list of imports and lines of code (both can be empty).
