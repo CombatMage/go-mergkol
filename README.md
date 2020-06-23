@@ -1,15 +1,25 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/EricNeid/go-mergkol)
 
-# Mergkol
+# About
 
 Merging multiple kotlin source code files into single file, removing all package declaration.
+Usefull when using kotlin in coding game. <https://www.codingame.com/>
 
 ## Installation
 
-`go install github.com/CombatMage/go-mergkol`
+Download tool.
+
+```bash
+go get github.com/EricNeid/go-mergkol/cmd/sleep
+go install github.com/EricNeid/go-mergkol/cmd/sleep
+```
 
 ## Usage
 
-`go-mergkol.exe -h`
+Make sure that $GOPATH/bin is in your path
 
-`go-mergkol.exe -dir input -o merged.kt`
+```bash
+go-mergkol.exe -h
+
+go-mergkol.exe -dir input -o merged.kt
+```
